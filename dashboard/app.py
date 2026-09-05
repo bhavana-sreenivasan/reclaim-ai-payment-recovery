@@ -34,7 +34,7 @@ ACTION_COST = {"WhatsApp": 0.50, "SMS": 0.15, "Email": 0.05, "Retry": 0.00, "Alt
 # ---------------------------------------------------------------------------
 # Data loading
 # ---------------------------------------------------------------------------
-DEFAULT_DIR = os.environ.get("RECOVERY_DATA_DIR", "./data")
+DEFAULT_DIR = os.environ.get("RECOVERY_DATA_DIR", ".")
 
 with st.sidebar:
     st.header("⚙️ Data source")
