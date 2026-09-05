@@ -1,0 +1,19 @@
+# Data files produced by the pipeline (large, regenerable — don't commit)
+data/
+*.csv
+
+# Trained model artifacts
+*.json
+!package.json
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
