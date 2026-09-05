@@ -1,0 +1,6 @@
+Strategy,₹ Recovered,Recovery Cost ₹,₹ Recovered / ₹ Spent,Attempts,₹ Recovered / Attempt,Recovery Rate,Unresolved ₹
+No Intervention,18476286.26,0.0,∞ (₹0 spent),0,n/a (0 attempts),13.7%,116653376.42
+Rules-Only Baseline,104167356.45,37829.95,2753.57,151216,688.86,77.2%,30962306.23
+Reason-Aware Agent,86276382.72,17761.3,4857.55,99995,862.81,63.4%,48853279.96
+Value-Weighted Agent,108203774.21,20734.3,5218.59,145118,745.63,80.0%,26925888.47
+⭐ Predictive AI Agent,116606114.3,33645.7,3465.71,132752,878.38,85.1%,18523548.38
