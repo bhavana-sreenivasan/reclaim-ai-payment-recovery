@@ -94,5 +94,4 @@ Full tables: `results/`. Console log of the final run: `results/run_log.txt`.
 ## Files
 
 `generate_data.py` generator (assumptions documented inline) | `run_pipeline.py` models, policies, evaluation |
-`results/` all tables (`policy_across_seeds.csv`, `bootstrap_ci.csv`, `sensitivity_grid.csv`, `ope_check.csv`, `ablation_root_cause.csv`, `model_diagnostics.csv`) |
-`DATA_AUDIT.md` what was wrong with the v1 dataset
+`results/` all tables (`policy_across_seeds.csv`, `bootstrap_ci.csv`, `sensitivity_grid.csv`, `ope_check.csv`, `ablation_root_cause.csv`, `model_diagnostics.csv`) 
