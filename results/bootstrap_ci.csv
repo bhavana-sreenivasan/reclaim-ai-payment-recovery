@@ -1,0 +1,6 @@
+comparison,mean_diff_per_1k,ci95_lo,ci95_hi,significant
+Predictive cascade minus Rules ladder (retry>email>SMS>WA),48844.34959349593,44436.80236672668,54390.935034375514,True
+Predictive cascade minus Value-weighted rules,37580.456484967544,34495.891013941175,40801.9761751787,True
+Predictive cascade minus Reason playbook (cost-blind),16650.198805041742,14816.15580427784,18509.61166994053,True
+"Predictive cascade minus Segment lookup (no ML, EV-gated)",2416.517378730834,821.0771280078574,4012.103343427729,True
+Predictive cascade minus Predictive EV agent (single-shot),17435.30381404485,15611.02412969935,19427.99870205162,True

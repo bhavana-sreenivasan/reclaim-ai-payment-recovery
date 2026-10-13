@@ -1,0 +1,4 @@
+variant,incr_net_per_1k_mean,incr_net_per_1k_sd,recovery_rate_mean
+No diagnosis (context = UNKNOWN),58690.28762431332,1615.6285612657473,0.3073687762037903
+Predicted + confidence-gated (the pipeline),84364.4681098479,1581.125756076306,0.37587974175220956
+Perfect diagnosis (true cause),98142.87326946646,1062.1862014759824,0.4085236071502146

@@ -1,0 +1,64 @@
+seed 2026 done in 42.3s
+seed 1 done in 34.1s
+seed 2 done in 28.8s
+seed 3 done in 26.4s
+seed 4 done in 32.0s
+
+PRIMARY SEED
+                                          policy  recovery_rate  uplift_pp  pursued_pct  attempts_per_1k  cost_per_1k  net_per_1k  incr_net_per_1k  human_call_pct  seed
+                                      No action           0.14       0.00         0.00             0.00         0.00    57229.43             0.00            0.00  2026
+              Rules ladder (retry>email>SMS>WA)           0.24      10.08       100.00          1522.15       187.28    93793.73         36564.30            0.00  2026
+                           Value-weighted rules           0.24      10.21       100.00          1520.87      5729.19   105057.62         47828.19            9.65  2026
+                   Reason playbook (cost-blind)           0.40      26.02       100.00          1411.14     27843.59   125987.88         68758.45           56.74  2026
+               Segment lookup (no ML, EV-gated)           0.37      23.21       100.00          1428.88      4479.32   140221.56         82992.13            8.11  2026
+                  Predictive EV agent (cascade)           0.37      23.51        99.99          1426.09      3448.65   142638.08         85408.65            6.18  2026
+              Predictive EV agent (single-shot)           0.33      19.34        99.99           999.89      1681.42   125202.77         67973.35            2.46  2026
+True-probability policy (knows p, not outcomes)           0.42      28.25       100.00          1391.61      4996.99   160721.09        103491.67           10.32  2026
+        Oracle ceiling (hindsight, single-shot)           0.59      45.18        45.18           451.79      2778.68   217411.68        160182.25             NaN  2026
+
+ACROSS SEEDS
+                                          policy  recovery_rate_mean  recovery_rate_sd  incr_net_per_1k_mean  incr_net_per_1k_sd  cost_per_1k_mean  attempts_per_1k_mean  human_call_pct_mean
+                                      No action                0.14               0.0 0.00                0.00              0.00                  0.00                 0.00
+              Rules ladder (retry>email>SMS>WA)                0.24               0.0              35853.44              547.62            191.29               1527.75                 0.00
+                           Value-weighted rules                0.24               0.0              47532.31              590.08           5723.17               1520.93                 9.64
+                   Reason playbook (cost-blind)                0.40               0.0              67402.82             3488.47          28622.53               1414.65                60.65
+               Segment lookup (no ML, EV-gated)                0.37               0.0              83773.28             1413.61           5416.32               1430.69                10.27
+                  Predictive EV agent (cascade)                0.38               0.0              84364.47             1581.13           4510.18               1427.47                 8.63
+              Predictive EV agent (single-shot)                0.33               0.0              67423.28              839.72           2434.21                999.41                 4.04
+True-probability policy (knows p, not outcomes)                0.42               0.0             101371.79             1232.01           5104.40               1394.95                10.62
+        Oracle ceiling (hindsight, single-shot)                0.59               0.0             159464.33              702.57           2776.24                451.66                  NaN
+
+WINS (predictive > baseline) by seed: {'Rules ladder (retry>email>SMS>WA)': 5, 'Value-weighted rules': 5, 'Reason playbook (cost-blind)': 5, 'Segment lookup (no ML, EV-gated)': 3}
+
+BOOTSTRAP
+                                                 comparison  mean_diff_per_1k  ci95_lo  ci95_hi  significant
+Predictive cascade minus Rules ladder (retry>email>SMS>WA)           48844.3  44436.8  54390.9 True
+             Predictive cascade minus Value-weighted rules           37580.5  34495.9  40802.0 True
+     Predictive cascade minus Reason playbook (cost-blind)           16650.2  14816.2  18509.6 True
+ Predictive cascade minus Segment lookup (no ML, EV-gated)            2416.5    821.1   4012.1 True
+Predictive cascade minus Predictive EV agent (single-shot)           17435.3  15611.0  19428.0 True
+
+OPE
+                 policy  ips_estimate_net_per_1k  ips_ci95_lo  ips_ci95_hi  simulator_truth_net_per_1k  truth_inside_ci
+Predictive single-shot                 133616.2     117809.2     148522.5                    125202.8            True
+             No action                  54548.7      43237.1      68529.8                     57229.4            True
+
+DIAG
+                                     0          1          2          3          4
+seed                         2026.000      1.000      2.000      3.000      4.000
+n_train                     46687.000  47095.000  47412.000  47537.000  47466.000
+n_val                       16659.000  16384.000  16272.000  15912.000  16139.000
+n_test                      36654.000  36521.000  36316.000  36551.000  36395.000
+gate_tau                        0.390      0.370      0.380      0.390      0.370
+test_accuracy_all               0.755      0.755      0.751      0.751      0.752
+test_gate_coverage              0.662      0.714      0.662      0.714      0.715
+test_gate_precision             0.969      0.925      0.968      0.924      0.921
+test_auc                        0.667      0.657      0.668      0.658      0.665
+test_brier_raw                  0.163      0.167      0.164      0.167      0.166
+test_brier_calibrated           0.163      0.167      0.164      0.167      0.166
+test_ece_raw                    0.009      0.005      0.008      0.007      0.007
+test_ece_calibrated             0.008      0.008      0.012      0.009      0.012
+test_base_rate                  0.225      0.228      0.226      0.231      0.229
+brier_of_constant_baseline      0.174      0.176      0.175      0.178      0.177
+
+SENS wins: 18 / 18
