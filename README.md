@@ -1,9 +1,4 @@
 ---
-title: ReClaim v2
-emoji: 💳
-sdk: gradio
-app_file: app.py
----
 
 # ReClaim v2: cost-aware payment-recovery policy (semi-synthetic)
 
