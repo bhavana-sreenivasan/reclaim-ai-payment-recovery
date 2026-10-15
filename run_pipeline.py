@@ -65,6 +65,7 @@ def fit_root_cause(tr, va, te, target_precision=0.90):
                 test_accuracy_all=float((out["te"]["pred"] == te.true_error_code.values).mean()),
                 test_gate_coverage=float(gate_te.mean()),
                 test_gate_precision=float((out["te"]["pred"] == te.true_error_code.values)[gate_te].mean()))
+    out["model"], out["tau"] = full, tau          # exposed so the app can reuse them (does not change results)
     return out, diag
 
 

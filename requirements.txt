@@ -3,3 +3,6 @@ pandas
 scipy
 scikit-learn
 xgboost
+joblib
+gradio
+shap
