@@ -1,0 +1,10 @@
+{
+  "seed": 2026,
+  "gate_tau": 0.39,
+  "test_accuracy_all": 0.754515196158673,
+  "test_gate_coverage": 0.6619195722158564,
+  "test_gate_precision": 0.9686752946995302,
+  "test_auc": 0.6668656932655667,
+  "test_brier": 0.16324147582054138,
+  "test_brier_constant": 0.17441889629636662
+}
