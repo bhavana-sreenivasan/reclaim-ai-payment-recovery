@@ -1,5 +1,3 @@
----
-
 # ReClaim v2: cost-aware payment-recovery policy (semi-synthetic)
 
 > **Status: simulated data.** No real payment data is used. The results show how recovery policies
@@ -10,14 +8,15 @@ versus **₹36k** for a retry-and-remind ladder (recovery 37.5% vs 23.7%; 13.8% 
 It decides *which channel to use, in what order, and whether a ₹45 human call is worth it*, and it
 **says "UNKNOWN" and stays on safe channels when it is not confident about why the payment failed.**
 
-**Live demo:** [Hugging Face Space](https://huggingface.co/spaces/YOUR-USERNAME/YOUR-SPACE-NAME)
+**Live demo:** [Streamlit dashboard](https://YOUR-APP-NAME.streamlit.app)
 
 ## Run the demo
 
 ```bash
 pip install -r requirements.txt
 python train_and_save.py        # writes ./artifacts/ (seed 2026, May-Jun held-out test)
-python app.py                   # open http://127.0.0.1:7860/
+streamlit run streamlit_app.py  # dashboard: planner, SHAP explanations, evaluation results
+# optional: python app.py       # the same planner as a Gradio app (also needs: pip install gradio)
 ```
 
 Enter a failed payment. The app diagnoses the cause from the gateway message (with a confidence gate),
@@ -172,7 +171,7 @@ Full tables: `results/`. Console log of the final run: `results/run_log.txt`.
 
 ## Files
 
-`app.py` Gradio demo (with SHAP panels) | `train_and_save.py` trains and saves `artifacts/` for the app |
+`streamlit_app.py` dashboard + `core.py` decision logic (diagnosis, plan, SHAP) | `app.py` optional Gradio version | `train_and_save.py` trains and saves `artifacts/` for the app |
 `generate_data.py` generator (assumptions documented inline) | `run_pipeline.py` models, policies, evaluation |
 `results/` all tables (`policy_across_seeds.csv`, `bootstrap_ci.csv`, `sensitivity_grid.csv`, `ope_check.csv`, `ablation_root_cause.csv`, `model_diagnostics.csv`) |
 `DATA_AUDIT.md` what was wrong with the v1 dataset

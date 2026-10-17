@@ -4,5 +4,5 @@ scipy
 scikit-learn
 xgboost
 joblib
-gradio
 shap
+streamlit>=1.50
