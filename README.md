@@ -1,5 +1,5 @@
 # ReClaim v2: cost-aware payment-recovery policy (semi-synthetic)
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://reclaim-ai-payment-recovery.streamlit.app/)
+[![Open in Streamlit](https://img.shields.io/badge/Live%20Demo-Open%20Dashboard-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://reclaim-ai-payment-recovery.streamlit.app/)
 
 > **Status: simulated data.** No real payment data is used. The results show how recovery policies
 > rank *under the stated assumptions*. They are not estimates of real-world recovery rates.
