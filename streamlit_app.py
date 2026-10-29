@@ -7,11 +7,18 @@ import streamlit as st
 
 import core
 from generate_data import BANKS, CHANNELS, DEVICES, GATEWAYS, METHODS, NETWORKS, TIERS
+from pathlib import Path
+import streamlit as st
 
-st.set_page_config(page_title="ReClaim v2: cost-aware payment recovery", page_icon="💳", layout="wide")
+ICON = Path(__file__).parent / "reclaim-icon-128.png"
 RESULTS = Path(__file__).parent / "results"
 
-st.title("💳 ReClaim v2: cost-aware payment recovery")
+st.set_page_config(
+    page_title="ReClaim: cost-aware payment recovery",
+    page_icon=str(ICON),
+    layout="wide",
+)
+st.title(" ReClaim: cost-aware payment recovery")
 st.warning("**Simulated data.** The models were trained on a simulator with invented parameters. "
            "This shows how the policy *reasons*, not real recovery rates.", icon="⚠️")
 
