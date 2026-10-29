@@ -1,4 +1,5 @@
 # ReClaim v2: cost-aware payment-recovery policy (semi-synthetic)
+[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://reclaim-ai-payment-recovery.streamlit.app/)
 
 > **Status: simulated data.** No real payment data is used. The results show how recovery policies
 > rank *under the stated assumptions*. They are not estimates of real-world recovery rates.
@@ -8,7 +9,7 @@ versus **₹36k** for a retry-and-remind ladder (recovery 37.5% vs 23.7%; 13.8% 
 It decides *which channel to use, in what order, and whether a ₹45 human call is worth it*, and it
 **says "UNKNOWN" and stays on safe channels when it is not confident about why the payment failed.**
 
-**Live demo:** [Streamlit dashboard](https://YOUR-APP-NAME.streamlit.app)
+
 
 ## Run the demo
 
