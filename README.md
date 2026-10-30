@@ -25,6 +25,7 @@ estimates each channel's **uplift** over doing nothing, subtracts its cost, buil
 shows **why** (SHAP, see below).
 
 ### 90-second demo script
+![ReClaim recovery planner: expired card diagnosed at 99% confidence, plan HUMAN_CALL then ALT_METHOD, with expected net value per channel](images/recovery-planner.png)
 
 Defaults: Card, BANK_G, Medium tier, margin 30%, human-call cost ₹45.
 
@@ -51,6 +52,7 @@ The gateway-message dropdown only offers messages that can occur for the chosen 
   sanity check on the model, not a discovery about real customers. The cause model also learns template
   fingerprints (only 3 specific messages per cause), so its 99% confidence on a clean message would not
   carry over to real gateway text.
+  ![SHAP explanation view. Left: the words and payment method behind the diagnosis. Right: the factors behind the recovery score for the planned channel.](images/explanation-view.png)
 
 ## How this would plug into Razorpay (design sketch, not built)
 
@@ -118,6 +120,7 @@ python run_pipeline.py --seeds 2026 1 2 3 4 --out results       # a few minutes 
 | *Hindsight oracle (unreachable)* | 59.0% | 159,464 | 2,776 |
 
 ### What the results do and do not show
+![Policy comparison over 5 simulated seeds, per 1,000 failed payments at a 30% margin](images/policy-comparison.png)
 
 - **Cost-aware targeting beats the rule-based policies in all 5 seeds**, with paired-bootstrap 95% CIs excluding zero
   (vs rules ladder: +₹46.8k per 1,000, CI 42.3k-52.5k).
@@ -172,7 +175,7 @@ Full tables: `results/`. Console log of the final run: `results/run_log.txt`.
 
 ## Files
 
-`streamlit_app.py` dashboard + `core.py` decision logic (diagnosis, plan, SHAP) | `app.py` optional Gradio version | `train_and_save.py` trains and saves `artifacts/` for the app |
+`streamlit_app.py` dashboard + `core.py` decision logic (diagnosis, plan, SHAP) | `train_and_save.py` trains and saves `artifacts/` for the app |
 `generate_data.py` generator (assumptions documented inline) | `run_pipeline.py` models, policies, evaluation |
 `results/` all tables (`policy_across_seeds.csv`, `bootstrap_ci.csv`, `sensitivity_grid.csv`, `ope_check.csv`, `ablation_root_cause.csv`, `model_diagnostics.csv`) |
 `DATA_AUDIT.md` what was wrong with the v1 dataset
